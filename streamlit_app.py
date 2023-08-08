@@ -28,8 +28,7 @@ def generate_password():
 
 
 st.header("Login password Generator")
-st.divider()
-st.caption("Unleash Unique Passwords")
+st.subheader("Unleash Unique Passwords")
 st.divider()
 prefix = st.text_input("Enter prefex of USN",max_chars=8,placeholder='1ms21ci')
 students = st.slider('Number of Students', 0, 220, 75)
