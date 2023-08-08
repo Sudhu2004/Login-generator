@@ -31,7 +31,7 @@ st.header("Login password Generator")
 st.subheader("Unleash Unique Passwords")
 st.divider()
 prefix = st.text_input("Enter prefex of USN",placeholder='1ms21ci')
-students = st.slider('Number of Students', 0, 220, 75)
+students = st.slider('Number of Students', 0, 300, 75)
 password_length = st.slider('Length of password',0,10,5)
 st.divider()
 if st.button("Generate"):
