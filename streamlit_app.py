@@ -30,7 +30,7 @@ def generate_password():
 st.header("Login password Generator")
 st.subheader("Unleash Unique Passwords")
 st.divider()
-prefix = st.text_input("Enter prefex of USN",placeholder='1ms21ci')
+prefix = st.text_input("Enter prefex of USN",placeholder='1ms21ci',max_chars=7)
 students = st.slider('Number of Students', 0, 300, 75)
 password_length = st.slider('Length of password',0,10,5)
 st.divider()
@@ -48,10 +48,10 @@ if st.button("Generate"):
         i=k+1
         if i < 10:
             login["usn"].append(department_usn+'00'+str(i))
-        elif i >=10 or i<100:
-            login["usn"].append(department_usn+'0'+str(i))
-        elif i >=100 or i<number_of_passwords:
-            login["usn"].append(department_usn+str(i))
+        elif i >=10 and i<100:
+            login["usn"].append(department_usn + '0' + str(i))
+        else:
+            login["usn"].append(department_usn + str(i))
         
     for i in range(number_of_passwords):
         password = rm.choice(passwd)
