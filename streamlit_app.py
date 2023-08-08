@@ -48,8 +48,10 @@ if st.button("Generate"):
         i=k+1
         if i < 10:
             login["usn"].append(department_usn+'00'+str(i))
-        elif i >=10 or i<number_of_passwords:
+        elif i >=10 or i<100:
             login["usn"].append(department_usn+'0'+str(i))
+        elif i >=100 or i<number_of_passwords:
+            login["usn"].append(department_usn+str(i))
         
     for i in range(number_of_passwords):
         password = rm.choice(passwd)
