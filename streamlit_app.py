@@ -4,7 +4,8 @@ import random as rm
 
 alphabets = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 numbers = [0,1,2,3,4,5,6,7,8,9]
-passwd = []
+characters = ['!','@','#','$','%','^','&','*','(',')','-','+','_','=','{','}','[',']','<','>','?','/'   ]
+passwd = [] 
 login = {
     "usn": [],
     "password":[]
@@ -15,11 +16,13 @@ login = {
 def generate_password():
     pass_ = []
     for j in range(passwd_length):
-        key = rm.randint(0,1)
+        key = rm.randint(0,2)
         if key == 0:
             pass_.append(rm.choice(alphabets))
-        else:
+        elif key == 1:
             pass_.append(rm.choice(numbers))
+        else:
+            pass_.append(rm.choice(characters))
             
     pass_ = ''.join(map(str,pass_))
             
